@@ -25,7 +25,7 @@ public class ConvidadosController {
 	@GetMapping("/convidados")
 	private ModelAndView listar() {
 
-		ModelAndView modelAndView = new ModelAndView("ListaConvidados");
+		ModelAndView modelAndView = new ModelAndView("festa/ListaConvidados");
 		modelAndView.addObject("convidados", convidados.findAll());
 		modelAndView.addObject(new Convidado());
 

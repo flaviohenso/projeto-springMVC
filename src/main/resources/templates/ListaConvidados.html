@@ -5,12 +5,41 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <title>Lista de Convidados</title>
-<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
 	rel="stylesheet" />
-<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+<link
+	th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap-theme.min.css}"
 	rel="stylesheet" />
 </head>
 <body>
-	<h1>AlgaWorks!</h1>
+	<form class="form-inline" method="POST" style="margin: 20px 0"
+		th:object="${convidado}" th:action="@{/convidados}">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Nome"
+				th:field="*{nome}" /> <input type="text" class="form-control"
+				placeholder="Acompanhantes" th:field="*{quantidadeConvidado}" />
+			<button type="submit" class="btn btn-primary">Adicionar</button>
+		</div>
+	</form>
+	<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Lista de convidados</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Acompanhantes</th>
+					</tr>
+				</thead>
+				<tr th:each="convidado : ${convidados}">
+					<td th:text="${convidado.nome}"></td>
+					<td th:text="${convidado.quantidadeConvidado}"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </body>
+
 </html>

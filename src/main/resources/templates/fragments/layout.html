@@ -32,6 +32,50 @@
 
 <!-- Custom Theme Style -->
 <link rel="stylesheet" th:href="@{/build/css/custom.min.css}" />
+
+<!-- Inicio Form -->
+<!-- bootstrap-wysiwyg -->
+<link href="../vendors/google-code-prettify/bin/prettify.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/google-code-prettify/bin/prettify.min.css}">
+<!-- Select2 -->
+<link href="../vendors/select2/dist/css/select2.min.css"
+	rel="stylesheet" th:href="@{/vendors/select2/dist/css/select2.min.css}">
+<!-- Switchery -->
+<link href="../vendors/switchery/dist/switchery.min.css"
+	rel="stylesheet" th:href="@{/vendors/switchery/dist/switchery.min.css}">
+<!-- starrr -->
+<link href="../vendors/starrr/dist/starrr.css" rel="stylesheet"
+	th:href="@{/vendors/starrr/dist/starrr.css}">
+
+<!-- Custom Theme Style -->
+<link href="../build/css/custom.min.css" rel="stylesheet"
+	th:href="@{/build/css/custom.min.css}">
+<!-- Fim Form -->
+
+<!-- Datatables -->
+<link
+	href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/datatables.net-bs/css/dataTables.bootstrap.min.cs}">
+<link
+	href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css}">
+<link
+	href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css}">
+<link
+	href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css}">
+<link
+	href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+	rel="stylesheet"
+	th:href="@{/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css}">
+
+
 </head>
 
 <body class="nav-md">
@@ -76,7 +120,8 @@
 
 			<!-- footer content -->
 			<footer>
-				<div data-th-replace="fragments/fragment_footer_content :: footer_content"></div>
+				<div
+					data-th-replace="fragments/fragment_footer_content :: footer_content"></div>
 			</footer>
 			<!-- /footer content -->
 		</div>
@@ -126,6 +171,67 @@
 
 	<!-- Custom Theme Scripts -->
 	<script th:src="@{/build/js/custom.min.js}"></script>
+
+	<!-- inicio Form -->
+	<!-- bootstrap-wysiwyg -->
+	<script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"
+		th:src="@{/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js}"></script>
+	<script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"
+		th:src="@{/vendors/jquery.hotkeys/jquery.hotkeys.js}"></script>
+	<script src="../vendors/google-code-prettify/src/prettify.js"
+		th:src="@{/vendors/google-code-prettify/src/prettify.js}"></script>
+	<!-- jQuery Tags Input -->
+	<script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"
+		th:src="@{/vendors/jquery.tagsinput/src/jquery.tagsinput.js}"></script>
+	<!-- Switchery -->
+	<script src="../vendors/switchery/dist/switchery.min.js"
+		th:src="@{/vendors/switchery/dist/switchery.min.js}"></script>
+	<!-- Select2 -->
+	<script src="../vendors/select2/dist/js/select2.full.min.js"
+		th:src="@{/vendors/select2/dist/js/select2.full.min.js}"></script>
+	<!-- Parsley -->
+	<script src="../vendors/parsleyjs/dist/parsley.min.js"
+		th:src="@{/vendors/parsleyjs/dist/parsley.min.js}"></script>
+	<!-- Autosize -->
+	<script src="../vendors/autosize/dist/autosize.min.js"
+		th:src="@{/vendors/autosize/dist/autosize.min.js}"></script>
+	<!-- jQuery autocomplete -->
+	<script
+		src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"
+		th:src="@{/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js}"></script>
+	<!-- starrr -->
+	<script src="../vendors/starrr/dist/starrr.js"
+		th:src="@{/vendors/starrr/dist/starrr.js}"></script>
+	<!-- Fim do form -->
+	<!-- jQuery Smart Wizard -->
+	<script src="../vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"
+		th:src="@{/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js}"></script>
+	<!-- Custom Theme Scripts -->
+
+	<!-- Datatables -->
+	<script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script
+		src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+	<script
+		src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+	<script
+		src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+	<script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+	<script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+	<script
+		src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+	<script
+		src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+	<script
+		src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script
+		src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+	<script
+		src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+	<script src="../vendors/jszip/dist/jszip.min.js"></script>
+	<script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+	<script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
 
 </body>
 </html>

@@ -18,11 +18,11 @@ public class DashboardController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(DashboardController.class);	
 	
-	@GetMapping("/index")
+	@GetMapping("/dashboard")
 	private ModelAndView home() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("index");
-		logger.info("chmou Dashboard");
+		logger.info("chamou Dashboard");
 		return model;
 	}
 

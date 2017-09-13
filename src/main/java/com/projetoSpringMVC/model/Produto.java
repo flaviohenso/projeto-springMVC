@@ -38,7 +38,7 @@ public class Produto implements Serializable {
 		this.id = id;
 	}
 	
-	@NotBlank @Size(max=55)
+	@NotBlank(message="Não pode ser vazio") @Size(max=55,message="Não pode ser maior que 55")
 	@Column(nullable = false, length = 200)
 	public String getNome() {
 		return nome;

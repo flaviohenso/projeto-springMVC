@@ -32,6 +32,9 @@
 
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="alert alert-success" th:text="${mensagem}"
+					th:if="${not #strings.isEmpty(mensagem)}"></div>
+
 				<div class="x_panel">
 
 					<!-- /modal -->
@@ -44,7 +47,7 @@
 								<!-- Large modal -->
 								<button type="button" class="btn btn-primary"
 									data-toggle="modal" data-target=".bs-example-modal-lg">Novo</button>
-									
+
 								<ul class="nav navbar-right panel_toolbox">
 									<li><a class="collapse-link"><i
 											class="fa fa-chevron-up"></i></a></li>

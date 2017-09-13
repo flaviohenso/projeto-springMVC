@@ -4,62 +4,66 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
-				<form id="demo-form2" data-parsley-validate th:action="@{/produto}" th:method="post"
+				<form id="demo-form2" data-parsley-validate th:object="${produto}"
+					th:action="@{/produto/save}" th:method="post"
 					class="form-horizontal form-label-left">
-
+					
+					<div class="alert alert-danger">
+						<div th:each="dateiledError : ${#fields.detailedErrors()}">
+							<span th:text="${detailedError.message}"></span>
+						</div>
+					</div>
+					
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12"
-							for="first-name">First Name <span class="required">*</span>
+							for="first-name">Nome <span class="required">*</span>
 						</label>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<input type="text" id="first-name" required="required"
+							<input type="text" id="nome" required="required" name="nome"
+								th:field="*{nome}" class="form-control col-md-7 col-xs-12" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12"
+							for="last-name">SKU <span class="required">*</span>
+						</label>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<input type="text" id="last-name" name="sku" th:field="*{sku}"
+								required="required" class="form-control col-md-7 col-xs-12">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12"
+							for="last-name">Valor unitário <span class="required">*</span>
+						</label>
+						<div class="col-md-6 col-sm-6 col-xs-12">
+							<input type="text" id="last-name" name="valorUnitario"
+								th:field="*{valorUnitario}" required="required"
 								class="form-control col-md-7 col-xs-12">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12"
-							for="last-name">Last Name <span class="required">*</span>
+							for="last-name">Quantidade Estoque <span class="required">*</span>
 						</label>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<input type="text" id="last-name" name="last-name"
-								required="required" class="form-control col-md-7 col-xs-12">
+							<input type="text" id="last-name" name="quantidadeEstoque"
+								th:field="*{quantidadeEstoque}" required="required"
+								class="form-control col-md-7 col-xs-12">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="middle-name"
-							class="control-label col-md-3 col-sm-3 col-xs-12">Middle
-							Name / Initial</label>
+						<label class="control-label col-md-3 col-sm-3 col-xs-12">Categoria</label>
 						<div class="col-md-6 col-sm-6 col-xs-12">
-							<input id="middle-name" class="form-control col-md-7 col-xs-12"
-								type="text" name="middle-name">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<div id="gender" class="btn-group" data-toggle="buttons">
-								<label class="btn btn-default" data-toggle-class="btn-primary"
-									data-toggle-passive-class="btn-default"> <input
-									type="radio" name="gender" value="male"> &nbsp; Male
-									&nbsp;
-								</label> <label class="btn btn-primary" data-toggle-class="btn-primary"
-									data-toggle-passive-class="btn-default"> <input
-									type="radio" name="gender" value="female"> Female
-								</label>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12">Date
-							Of Birth <span class="required">*</span>
-						</label>
-						<div class="col-md-6 col-sm-6 col-xs-12">
-							<input id="birthday"
-								class="date-picker form-control col-md-7 col-xs-12"
-								required="required" type="text">
+							<select class="form-control" th:field="*{categoria}">
+								<option th:value="NULL" >--- Selecione ---</option>
+								<option th:each="categoria : ${categorias}"
+									th:value="${categoria.id}" th:text="#{${categoria.nome}}">Wireframe</option>
+							</select>
 						</div>
 					</div>
 					<div class="ln_solid"></div>
+
 					<div class="form-group">
 						<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 							<button class="btn btn-primary" type="button">Cancel</button>

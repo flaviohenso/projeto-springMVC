@@ -24,5 +24,5 @@ public class CategoriaService {
 	public List<Categoria> selectCategoria(){
 		return categorias.findAll();
 	}
-	
+	 
 }

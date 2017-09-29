@@ -32,8 +32,8 @@
 
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="alert alert-success" th:text="${mensagem}"
-					th:if="${not #strings.isEmpty(mensagem)}"></div>
+				<div class="alert alert-success" th:text="${sucesso}" th:if="${not #strings.isEmpty(sucesso)}"></div>
+				<div class="alert alert-danger" th:text="${error}" th:if="${not #strings.isEmpty(error)}"></div>
 
 				<div class="x_panel">
 

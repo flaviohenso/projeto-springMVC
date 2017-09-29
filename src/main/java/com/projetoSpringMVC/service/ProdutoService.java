@@ -25,8 +25,8 @@ public class ProdutoService {
 	/**
 	 * 
 	 */
-	public void listarTudo() {
-		System.out.println(produtos.findAll());
+	public List<Produto> listarTudo() {
+		return produtos.findAll();
 	}
 
 	public void salvar(Produto produto) {
@@ -39,7 +39,6 @@ public class ProdutoService {
 		List<Produto> result = produtos.findAllByNome(username).stream().filter(x -> x.getNome().equalsIgnoreCase(username))
 				.collect(Collectors.toList());
 
-		System.out.println(result);
 		return result;
 
 	}

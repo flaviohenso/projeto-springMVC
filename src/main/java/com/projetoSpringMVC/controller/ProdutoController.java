@@ -10,7 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.projetoSpringMVC.model.Produto;
 import com.projetoSpringMVC.service.CategoriaService;
 import com.projetoSpringMVC.service.ProdutoService;
+import com.projetoSpringMVC.validator.ProdutoValidator;
 
 /**
  * @author flavio
@@ -34,17 +37,25 @@ public class ProdutoController {
 	private ProdutoService produtoService;
 	@Autowired
 	private CategoriaService categoriaService;
+	
+	@InitBinder
+	protected void InitBinder(WebDataBinder webDataBinder) {
+		System.out.println("validando dados!");
+		webDataBinder.setValidator(new ProdutoValidator());
+	}
 
 	@PostMapping("/save")
 	public ModelAndView save(@Valid Produto produto, BindingResult result, RedirectAttributes attributes) {
 		ModelAndView modelAndView = new ModelAndView();
 
 		if (result.hasErrors()) {
-			return this.list(produto);
+			attributes.addFlashAttribute("error", "Erro ao salvar "+result.getObjectName() + " " + result.getAllErrors());
+			modelAndView.setViewName("redirect:list");
+			return modelAndView;
 		}
 
 		produtoService.salvar(produto);
-		attributes.addFlashAttribute("mensagem", "Cliente salvo com Sucesso!");
+		attributes.addFlashAttribute("sucesso", "Cliente salvo com Sucesso!");
 		modelAndView.setViewName("redirect:list");
 		return modelAndView;
 	}
